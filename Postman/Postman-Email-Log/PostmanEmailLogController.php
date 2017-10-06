@@ -343,7 +343,7 @@ class PostmanEmailLogController {
 	<form id="movies-filter" method="get">
 		<!-- For plugins, we also need to ensure that the form posts back to our current page -->
 		<input type="hidden" name="page"
-			value="<?php echo esc_url( $_REQUEST['page'] ); ?>" />
+			value="<?php echo filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING ); ?>" />
 		<!-- Now we can render the completed list table -->
             <?php $testListTable->display()?>
         </form>
