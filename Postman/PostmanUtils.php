@@ -434,5 +434,29 @@ class PostmanUtils {
 			return $value;
 		}
 	}
+
+	public static function getServerIp() {
+	    $ip = $_SERVER['SERVER_ADDR'];
+	    $serverIp = filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 );
+
+	    if ( ! $serverIp ) {
+	    	$serverIp = self::get_external_ip();
+	    }
+
+	    return $serverIp;
+	}
+
+	private static function get_external_ip() {
+	    $ch = curl_init("http://icanhazip.com/");
+	    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	    $result = curl_exec($ch);
+	    curl_close($ch);
+	    if ($result === FALSE) {
+	        return "ERROR";
+	    } else {
+	        return trim($result);
+	    }
+	}	
 }
 PostmanUtils::staticInit ();
