@@ -45,7 +45,7 @@ if (! class_exists ( 'PostmanAbstractAjaxHandler' )) {
 		 */
 		protected function getRequestParameter($parameterName) {
 			if (isset ( $_POST [$parameterName] )) {
-				$value = filter_var( $_POST [$parameterName], FILTER_SANITIZE_STRING );
+				$value = $_POST[$parameterName];
 				$this->logger->trace ( sprintf ( 'Found parameter "%s"', $parameterName ) );
 				$this->logger->trace ( $value );
 				return $value;
