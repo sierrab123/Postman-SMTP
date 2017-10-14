@@ -447,7 +447,7 @@ class PostmanUtils {
 	}
 
 	private static function get_external_ip() {
-	    $ch = curl_init("http://icanhazip.com/");
+	    $ch = curl_init("https://postmansmtp.com/ip.php");
 	    curl_setopt($ch, CURLOPT_HEADER, FALSE);
 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	    $result = curl_exec($ch);
