@@ -1,3 +1,10 @@
+# WE ARE ALIVE!
+We just approve to the WordPress repo, TELL EVERYBODY !
+https://wordpress.org/plugins/post-smtp
+
+The Github repo MOVED here:
+https://github.com/yehudah/Post-SMTP
+
 # NEW HOME!
 Until this fork will be approved by the plugins team, we have this fork.
 To make thing more comfortable and so you can still get updates what's going on
